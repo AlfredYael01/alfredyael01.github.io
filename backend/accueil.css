@@ -95,19 +95,14 @@ h1 {
     background: linear-gradient(to bottom, rgba(30, 50, 66, 0.85), rgba(30, 50, 66, 1));
 }
 
-.grid-classes button:hover {
-    transform: scale(1.02);
-}
-
-
-.grid-classes button {
+.grid-classes a {
     font-family: 'UnifrakturMaguntia', cursive;
     width: 100%;
     height: 125px;
     font-size: 1.4em;
     border: 1px solid #ddd;
     background-color: #eaecef;
-    color: #000000 ;
+    color: #000000;
     border-right: 1px solid #ccc;
     box-sizing: border-box;
     transition: background 0.2s ease;
@@ -116,15 +111,21 @@ h1 {
     align-items: end;
     justify-content: center;
     padding-bottom: 10px;
+    text-decoration: none;
+    /*on fait un no repeat pour pas que l'image se répète*/
+    background-repeat: no-repeat;
+    text-align: center;
 }
 
-.grid-classes button:hover {
+.grid-classes a:hover {
     background-color: #d2d7dd;
+    transform: scale(1.02);
 }
 
-.grid-classes button:nth-child(n+10) {
+.grid-classes a:nth-child(n+10) {
     border-top: 2px solid #bfc6cc;
 }
+
 
 
 .table-container {
