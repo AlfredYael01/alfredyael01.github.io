@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f7fa;
+    color: #2c3e50;
+    padding: 40px 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.intro {
+    font-size: 1.1em;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.menu {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.grid-classes {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    width: 100vw;
+    gap: 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.grid-classes button {
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    background-color: #eaecef;
+    color: #2c3e50;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+
+.grid-classes button:hover {
+    background-color: #d2d7dd;
+}
+.grid-classes button:nth-child(n+10) {
+    border-top: 2px solid #bfc6cc;
+}
+
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #e6e9ed;
+    text-align: center;
+}
+
+thead {
+    background-color: #f0f4f8;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 0.95em;
+    color: #7f8c8d;
+}
+.classe {
+    width: 100%;
+    height: 80px;
+    font-size: 0.95em;
+    font-weight: bold;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #ccc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.classe:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+.cra       { background-image: url("../image/Cra.png"); }
+.elio      { background-image: url("../image/Elio.png"); }
+.iop       { background-image: url("../image/Iop.png"); }
+.enu       { background-image: url("../image/enu.png"); }
+.eni       { background-image: url("../image/Eni.png"); }
+.osa       { background-image: url("../image/Osa.png"); }
+.ougi      { background-image: url("../image/Ougi.png"); }
+.panda     { background-image: url("../image/Panda.png"); }
+.sacri     { background-image: url("../image/Sacri.png"); }
+.sram      { background-image: url("../image/Sram.png"); }
+.xelor     { background-image: url("../image/xelor.png"); }
+.feca      { background-image: url("../image/Feca.png"); }
+.hupper    { background-image: url("../image/Huppermage.png"); }
+.eca       { background-image: url("../image/Eca.png"); }
+.roublard  { background-image: url("../image/Roub.png"); }
+.steamer   { background-image: url("../image/Steam.png"); }
+.zobal     { background-image: url("../image/Zobal.png"); }
+.sadida    { background-image: url("../image/Sadi.png"); }

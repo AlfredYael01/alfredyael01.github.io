@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background: #000;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#intro-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+    transform: scaleY(0.8); /* ← réduction hauteur à 80% */
+    transform-origin: center;
+}
+
+
+.overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #00aaff;
+    text-align: center;
+    text-shadow: 0 0 10px #00aaff, 0 0 25px #0077aa;
+    transform: scaleY(0.8); /* ← correspond à la vidéo */
+    transform-origin: center;
+}
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 6vw;
+    color: #00bbff;
+    -webkit-text-stroke: 1px white;
+    text-shadow:
+            0 0 5px #00ffff,
+            0 0 10px #00aaff,
+            0 0 15px #00ddff;
+    z-index: 3;
+}
+.title span {
+    display: inline-block;
+    animation: letterJump 0.8s ease-out forwards, blueGlow 6s ease-in-out forwards;
+    animation-delay: calc(var(--i) * 0.15s), 1.5s;
+    opacity: 0;
+}
+
+
+
+.enter-button {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2em;
+    color: #ffffff;
+    background: transparent;
+    border: 2px solid #00aaff;
+    border-radius: 12px;
+    padding: 12px 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    animation: pulse 2s infinite;
+    text-shadow:
+            0 0 5px #00ffff,
+            0 0 10px #00aaff,
+            0 0 20px #00ddff;
+    box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
+}
+
+.enter-button:hover {
+    background-color: #00ddff;
+    color: #000;
+    box-shadow: 0 0 25px #00ddff, 0 0 40px #00aaff;
+    transform: scale(1.05);
+}
+
+
+#sound-toggle {
+    font-family: 'Kaushan Script', cursive;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    padding: 12px 25px;
+    font-size: 1.4em;
+    color: #ffffff;
+    background: linear-gradient(145deg, rgba(0,170,255,0.1), rgba(0,170,255,0.2));
+    border: 2px solid #00bbff;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow:
+            0 0 10px rgba(0,170,255,0.4),
+            0 0 20px rgba(0,170,255,0.3) inset;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease-in-out;
+    text-shadow:
+            0 0 5px #00eaff,
+            0 0 10px #00caff;
+}
+
+#sound-toggle:hover {
+    background: rgba(0, 170, 255, 0.3);
+    box-shadow:
+            0 0 20px #00ddff,
+            0 0 30px #00ccff inset;
+    transform: scale(1.05);
+}
+.intro-text {
+    margin-top: 25px;
+    width: 90vw;
+    max-width: 1200px;
+    padding: 0 30px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 2em;
+    line-height: 1.6;
+    color: #ccefff;
+    text-align: center;
+    text-shadow:
+            0 0 5px #00eaff,
+            0 0 10px #00caff;
+    animation: fadeInSlow 2.5s ease-in;
+    z-index: 3;
+}
+.fade-out {
+    animation: fadeOut 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+@keyframes letterJump {
+    0% { transform: translateY(20px); opacity: 0; }
+    50% { transform: translateY(-15px); opacity: 1; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes blueGlow {
+    0% {
+        color: #00bbff;
+        text-shadow: 0 0 5px #00bbff;
+    }
+    50% {
+        color: #00ddff;
+        text-shadow: 0 0 10px #00ddff, 0 0 15px #00ccff;
+    }
+    100% {
+        color: #33f0ff;
+        text-shadow: 0 0 15px #33f0ff, 0 0 25px #33f0ff, 0 0 35px #00ccff;
+    }
+}
+@keyframes fadeInSlow {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
