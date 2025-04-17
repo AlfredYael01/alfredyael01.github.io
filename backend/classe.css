@@ -10,6 +10,7 @@ body {
     padding: 0;
 }
 
+/* HEADER */
 header {
     text-align: center;
     padding: 60px 20px 30px;
@@ -18,8 +19,6 @@ header {
     border-bottom: 2px solid rgba(1, 209, 133, 0.4);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
-
-
 h1, h2 {
     font-family: 'UnifrakturMaguntia', cursive;
     color: #01d185;
@@ -27,7 +26,7 @@ h1, h2 {
     text-shadow: 0 0 10px rgba(1, 209, 133, 0.8), 0 0 20px rgba(27, 133, 111, 0.6);
 }
 
-
+/* LAYOUT CLASSE */
 .layout-container {
     display: grid;
     grid-template-areas:
@@ -39,57 +38,35 @@ h1, h2 {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-
-    /* 👇 ici on rend le fond transparent pour laisser passer l’image */
-    background: rgba(255, 255, 255, 0); /* transparent */
-
+    background: rgba(255, 255, 255, 0);
     border-radius: 12px;
-    box-shadow: none; /* plus d'ombre pour que ce soit clean */
+    box-shadow: none;
 }
 
-/* Attribution des zones */
-.west {
-    grid-area: west;
-    border-right: 4px solid rgba(1, 209, 133, 0.3);
-    background: linear-gradient(to bottom right, rgba(20, 40, 50, 0.85), rgba(10, 20, 30, 0.75));
+/* ZONES */
+.west, .east {
     backdrop-filter: blur(3px);
     color: white;
+    background: linear-gradient(to bottom right, rgba(20, 40, 50, 0.85), rgba(10, 20, 30, 0.75));
+    padding: 15px;
+    border-radius: 8px;
 }
-
 .center {
-    grid-area: center;
-    border-left: 4px solid rgba(1, 209, 133, 0.2);
-    border-right: 4px solid rgba(1, 209, 133, 0.2);
-    background: linear-gradient(to bottom, rgba(30, 60, 70, 0.8), rgba(15, 30, 35, 0.7));
     backdrop-filter: blur(3px);
     color: #e6fff5;
     text-align: center;
+    background: linear-gradient(to bottom, rgba(30, 60, 70, 0.8), rgba(15, 30, 35, 0.7));
+    padding: 15px;
+    border-radius: 8px;
 }
-
-.east {
-    grid-area: east;
-    border-left: 4px solid rgba(1, 209, 133, 0.3);
-    background: linear-gradient(to bottom left, rgba(20, 40, 50, 0.85), rgba(10, 20, 30, 0.75));
-    backdrop-filter: blur(3px);
-    color: white;
-}
-
 .south {
-    grid-area: south;
-    border-top: 4px solid rgba(1, 209, 133, 0.3);
-    padding-top: 10px;
     background: linear-gradient(to top, rgba(15, 30, 35, 0.8), rgba(0, 0, 0, 0.6));
     backdrop-filter: blur(3px);
     color: #c4f7eb;
-}
-
-
-section {
     padding: 15px;
-    background: rgba(250, 250, 250, 0.95); /* reste lisible */
     border-radius: 8px;
+    border-top: 4px solid rgba(1, 209, 133, 0.3);
 }
-
 
 section img {
     width: 100%;
@@ -100,24 +77,166 @@ section img {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-section h2 {
+section h2, section h3 {
     margin: 10px 0;
     text-align: center;
     color: white;
 }
-section p{
+
+section p {
     margin: 10px 0;
     text-align: justify;
     color: white;
 }
+
 section a {
-    margin: 10px 0;
-    color: red;
+    color: #01D185;
     text-decoration: none;
     text-align: center;
-
 }
-
 section a:hover {
     text-decoration: underline;
+}
+
+/* === BOUTON MODIFICATION === */
+#openModalBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #01D185;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1em;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 0 10px #01d185, 0 0 20px #01d185;
+    transition: background 0.3s ease;
+}
+#openModalBtn:hover {
+    background-color: #00aa86;
+}
+
+/* === POPUP === */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    background: linear-gradient(to bottom left, rgba(20, 40, 50, 0.95), rgba(10, 20, 30, 0.9));
+    color: #e0fef8;
+    max-width: 850px;
+    max-height: 85vh;
+    overflow-y: auto;
+    margin: 50px auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    position: relative;
+    border: 2px solid rgba(1, 209, 133, 0.3);
+    box-shadow: 0 0 20px rgba(1, 209, 133, 0.4);
+    scrollbar-width: thin; /* pour Firefox */
+    scrollbar-color: #01d185 rgba(255, 255, 255, 0.1);
+}
+
+
+.modal-content h2 {
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: #01d185;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px #01d185, 0 0 20px #1b856f;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 10px #01d185;
+}
+.close-btn:hover {
+    color: #01d185;
+}
+
+/* === FORMULAIRE === */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 60px;
+}
+
+form label {
+    font-weight: bold;
+    color: #8cfce4;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.1em;
+    text-shadow: 0 0 6px rgba(1, 209, 133, 0.6);
+}
+
+form input[type="text"],
+form input[type="file"],
+form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #00ffbf;
+    border-radius: 6px;
+    color: white;
+    font-size: 1em;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+form textarea {
+    height: 150px;
+    line-height: 1.6;
+}
+
+/* BOUTONS BAS */
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+form button {
+    padding: 12px 25px;
+    font-size: 1.05em;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px #01d185;
+}
+
+form button[type="submit"] {
+    background-color: #01D185;
+    color: white;
+}
+form button[type="submit"]:hover {
+    background-color: #00aa86;
+}
+
+form .cancel-btn {
+    background-color: #c0392b;
+    color: white;
+    box-shadow: 0 0 10px #e74c3c;
+}
+form .cancel-btn:hover {
+    background-color: #a93226;
 }

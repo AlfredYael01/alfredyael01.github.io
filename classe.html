@@ -1,48 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Détails de Classe</title>
-  <link rel="stylesheet" href="backend/classe.css">
-  <script defer src="backend/classe.js"></script>
+    <meta charset="UTF-8">
+    <title>Détails de Classe</title>
+    <link rel="stylesheet" href="backend/classe.css">
+    <script defer src="backend/classe.js"></script>
 </head>
 <body>
 <header>
-  <h1 id="titre-classe">Classe</h1>
-  <h2 id="version-classe">Version</h2>
+    <h1 id="titre-classe">Classe</h1>
+    <h2 id="version-classe">Version</h2>
 </header>
 
 <main class="layout-container">
-  <!-- West -->
-  <section class="west">
-    <img id="skin1" src="" alt="Skin 1" />
-    <img id="skin2" src="" alt="Skin 2" />
-  </section>
+    <!-- West -->
+    <section class="west">
+        <img id="skin1" src="" alt="Skin 1"/>
+        <img id="skin2" src="" alt="Skin 2"/>
+    </section>
 
-  <!-- Center -->
-  <section class="center">
-    <img id="image-zenith" src="" alt="Image Zenith" />
-    <h3>Code deck : <span id="code-deck"></span></h3>
-    <h3>Code aptitude : <span id="code-apti"></span></h3>
-    <h3>Zenith : <a id="lien-zenith" href="#" target="_blank">Lien</a></h3>
-  </section>
+    <!-- Center -->
+    <section class="center">
+        <img id="image-zenith" src="" alt="Image Zenith"/>
+        <h3>Code deck : <span id="code-deck"></span></h3>
+        <h3>Code aptitude : <span id="code-apti"></span></h3>
+        <h3>Zenith : <a id="lien-zenith" href="#" target="_blank">Lien</a></h3>
+    </section>
 
-  <!-- East -->
-  <section class="east">
-    <p id="role"></p>
-    <p id="fort"></p>
-    <p id="neutre"></p>
-    <p id="faible"></p>
-  </section>
+    <!-- East -->
+    <section class="east">
+        <p id="role"></p>
+        <p id="fort"></p>
+        <p id="neutre"></p>
+        <p id="faible"></p>
+    </section>
 
-  <!-- South -->
-  <section class="south">
-    <h2>Burst T2 : <span id="burstT2"></span></h2>
-    <h2>T1-T3 : <span id="burstT3"></span></h2>
-    <h2>Moyenne par tour : <span id="moyenne"></span></h2>
-    <img id="rotation" src="" alt="Rotation optimisée" />
-  </section>
+    <!-- South -->
+    <section class="south">
+        <h2>Burst T2 : <span id="burstT2"></span></h2>
+        <h2>T1-T3 : <span id="burstT3"></span></h2>
+        <h2>Moyenne par tour : <span id="moyenne"></span></h2>
+        <img id="rotation" src="" alt="Rotation optimisée"/>
+    </section>
 </main>
+
+<!-- Bouton pour ouvrir la popup -->
+<!-- BOUTON FIXE POUR OUVRIR LA POPUP -->
+<button id="openModalBtn">✏️ Modifier</button>
+
+<!-- POPUP -->
+<div class="modal" id="popup-form">
+    <div class="modal-content">
+        <button class="close-btn" id="close-form">✖</button>
+        <h2>Modifier les informations</h2>
+
+        <form id="form-modifier">
+            <div class="form-grid">
+
+                <!-- Colonne gauche -->
+                <div>
+                    <label for="form-titre">Titre</label>
+                    <input type="text" id="form-titre" name="Titre">
+
+                    <label for="form-version">Version</label>
+                    <input type="text" id="form-version" name="Version">
+
+                    <label for="form-code-deck">Code Deck</label>
+                    <input type="text" id="form-code-deck" name="Code_deck">
+
+                    <label for="form-code-apti">Code Aptitude</label>
+                    <input type="text" id="form-code-apti" name="Code_apti">
+
+                    <label for="form-lien-zenith">Lien Zenith</label>
+                    <input type="text" id="form-lien-zenith" name="Lien_zenith">
+
+                    <label for="form-img1">Image 1 (skin1)</label>
+                    <input type="file" id="form-img1" name="Image_cra">
+
+                    <label for="form-img2">Image 2 (skin2)</label>
+                    <input type="file" id="form-img2" name="Image_cra_skin">
+                    <label for="form-imgZen">Image Zenith</label>
+                    <input type="file" id="form-imgZen" name="Image_zenith_wakfu">
+
+                    <label for="form-rotation">Image Rotation</label>
+                    <input type="file" id="form-rotation" name="img_rotation_opti_detaille">
+                    <label for="form-burstT2">Burst T2</label>
+                    <input type="text" id="form-burstT2" name="BurstT2">
+
+                    <label for="form-burstT3">Burst T1-T3</label>
+                    <input type="text" id="form-burstT3" name="Burst_T1_T3">
+                </div>
+
+                <!-- Colonne droite -->
+                <div>
+                    <label for="form-role">Rôle</label>
+                    <textarea id="form-role" name="Role"></textarea>
+
+                    <label for="form-fort">Point Fort</label>
+                    <textarea id="form-fort" name="PointFort"></textarea>
+
+                    <label for="form-neutre">Point Neutre</label>
+                    <textarea id="form-neutre" name="PointNeutre"></textarea>
+
+                    <label for="form-faible">Point Faible</label>
+                    <textarea id="form-faible" name="PointFaible"></textarea>
+
+
+                </div>
+            </div>
+
+            <!-- BOUTONS BAS -->
+            <div class="form-buttons">
+                <button type="button" class="cancel-btn" id="cancel-btn">Annuler</button>
+                <button type="submit">✅ Mettre à jour</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 </body>
