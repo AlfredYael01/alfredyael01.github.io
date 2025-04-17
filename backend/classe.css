@@ -12,15 +12,21 @@ body {
 
 header {
     text-align: center;
-    padding-top: 40px;
-    color: white;
+    padding: 60px 20px 30px;
+    background: linear-gradient(to bottom, rgba(0, 20, 30, 0.7), rgba(1, 209, 133, 0.1));
+    backdrop-filter: blur(3px);
+    border-bottom: 2px solid rgba(1, 209, 133, 0.4);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 
 h1, h2 {
     font-family: 'UnifrakturMaguntia', cursive;
-    color: white;
-    margin-bottom: 15px;
+    color: #01d185;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(1, 209, 133, 0.8), 0 0 20px rgba(27, 133, 111, 0.6);
 }
+
 
 .layout-container {
     display: grid;
@@ -33,39 +39,57 @@ h1, h2 {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.93);
+
+    /* 👇 ici on rend le fond transparent pour laisser passer l’image */
+    background: rgba(255, 255, 255, 0); /* transparent */
+
     border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    box-shadow: none; /* plus d'ombre pour que ce soit clean */
 }
 
 /* Attribution des zones */
 .west {
     grid-area: west;
-    border-right: 4px solid #b0b0b0;
+    border-right: 4px solid rgba(1, 209, 133, 0.3);
+    background: linear-gradient(to bottom right, rgba(20, 40, 50, 0.85), rgba(10, 20, 30, 0.75));
+    backdrop-filter: blur(3px);
+    color: white;
 }
 
 .center {
     grid-area: center;
-    border-left: 4px solid #b0b0b0;
-    border-right: 4px solid #b0b0b0;
+    border-left: 4px solid rgba(1, 209, 133, 0.2);
+    border-right: 4px solid rgba(1, 209, 133, 0.2);
+    background: linear-gradient(to bottom, rgba(30, 60, 70, 0.8), rgba(15, 30, 35, 0.7));
+    backdrop-filter: blur(3px);
+    color: #e6fff5;
+    text-align: center;
 }
 
 .east {
     grid-area: east;
-    border-left: 4px solid #b0b0b0;
+    border-left: 4px solid rgba(1, 209, 133, 0.3);
+    background: linear-gradient(to bottom left, rgba(20, 40, 50, 0.85), rgba(10, 20, 30, 0.75));
+    backdrop-filter: blur(3px);
+    color: white;
 }
 
 .south {
     grid-area: south;
-    border-top: 4px solid #b0b0b0;
+    border-top: 4px solid rgba(1, 209, 133, 0.3);
     padding-top: 10px;
+    background: linear-gradient(to top, rgba(15, 30, 35, 0.8), rgba(0, 0, 0, 0.6));
+    backdrop-filter: blur(3px);
+    color: #c4f7eb;
 }
+
 
 section {
     padding: 15px;
-    background: rgba(250, 250, 250, 0.95);
+    background: rgba(250, 250, 250, 0.95); /* reste lisible */
     border-radius: 8px;
 }
+
 
 section img {
     width: 100%;
@@ -76,21 +100,22 @@ section img {
     box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-section h2,
-
-section a {
+section h2 {
     margin: 10px 0;
     text-align: center;
-    color: #1e3242;
+    color: white;
 }
 section p{
     margin: 10px 0;
     text-align: justify;
-    color: #333;
+    color: white;
 }
 section a {
-    color: black;
+    margin: 10px 0;
+    color: red;
     text-decoration: none;
+    text-align: center;
+
 }
 
 section a:hover {
