@@ -1,27 +1,72 @@
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    background-image: url("../image/NoxMaj.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 40px auto;
     padding: 20px;
-    background: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.92); /* Opacité pour voir le fond derrière */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
     border-radius: 10px;
 }
 
 h1, h2 {
     text-align: center;
+    font-family: 'UnifrakturMaguntia', cursive;
+    color: #1B856F;
+    margin-bottom: 15px;
 }
 
 .grille-details {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 30px;
+    grid-template-areas:
+        "west center east"
+        "south south south";
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.colonne {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    position: relative;
+    border: 2px solid #d0d0d0;
+}
+
+/* Zone de style façon BorderLayout */
+.col-west {
+    grid-area: west;
+    border-right: 4px solid #b0b0b0;
+}
+
+.col-center {
+    grid-area: center;
+    border-left: 4px solid #b0b0b0;
+    border-right: 4px solid #b0b0b0;
+}
+
+.col-east {
+    grid-area: east;
+    border-left: 4px solid #b0b0b0;
+}
+
+.col-south {
+    grid-area: south;
+    border-top: 4px solid #b0b0b0;
+    margin-top: 10px;
 }
 
 .colonne img {
@@ -29,8 +74,22 @@ h1, h2 {
     max-height: 200px;
     object-fit: contain;
     margin-bottom: 10px;
+    border-radius: 4px;
 }
 
-.colonne p, .colonne h2 {
+.colonne p,
+.colonne h2,
+.colonne a {
     margin: 10px 0;
+    text-align: center;
+    word-break: break-word;
+}
+
+.colonne a {
+    color: #017a87;
+    text-decoration: none;
+}
+
+.colonne a:hover {
+    text-decoration: underline;
 }
