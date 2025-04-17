@@ -57,19 +57,18 @@ body, html {
     font-size: 6vw;
     color: #00bbff;
     -webkit-text-stroke: 1px white;
-    text-shadow:
-            0 0 5px #00ffff,
-            0 0 10px #00aaff,
-            0 0 15px #00ddff;
+    text-shadow: 0 0 5px #00ffff,
+    0 0 10px #00aaff,
+    0 0 15px #00ddff;
     z-index: 3;
 }
+
 .title span {
     display: inline-block;
     animation: letterJump 0.8s ease-out forwards, blueGlow 6s ease-in-out forwards;
     animation-delay: calc(var(--i) * 0.15s), 1.5s;
     opacity: 0;
 }
-
 
 
 .enter-button {
@@ -84,10 +83,9 @@ body, html {
     text-decoration: none;
     transition: all 0.3s ease-in-out;
     animation: pulse 2s infinite;
-    text-shadow:
-            0 0 5px #00ffff,
-            0 0 10px #00aaff,
-            0 0 20px #00ddff;
+    text-shadow: 0 0 5px #00ffff,
+    0 0 10px #00aaff,
+    0 0 20px #00ddff;
     box-shadow: 0 0 15px rgba(0, 170, 255, 0.4);
 }
 
@@ -98,6 +96,9 @@ body, html {
     transform: scale(1.05);
 }
 
+.form {
+    color: black
+}
 
 #sound-toggle {
     font-family: 'Kaushan Script', cursive;
@@ -108,27 +109,25 @@ body, html {
     padding: 12px 25px;
     font-size: 1.4em;
     color: #ffffff;
-    background: linear-gradient(145deg, rgba(0,170,255,0.1), rgba(0,170,255,0.2));
+    background: linear-gradient(145deg, rgba(0, 170, 255, 0.1), rgba(0, 170, 255, 0.2));
     border: 2px solid #00bbff;
     border-radius: 12px;
     cursor: pointer;
-    box-shadow:
-            0 0 10px rgba(0,170,255,0.4),
-            0 0 20px rgba(0,170,255,0.3) inset;
+    box-shadow: 0 0 10px rgba(0, 170, 255, 0.4),
+    0 0 20px rgba(0, 170, 255, 0.3) inset;
     backdrop-filter: blur(5px);
     transition: all 0.3s ease-in-out;
-    text-shadow:
-            0 0 5px #00eaff,
-            0 0 10px #00caff;
+    text-shadow: 0 0 5px #00eaff,
+    0 0 10px #00caff;
 }
 
 #sound-toggle:hover {
     background: rgba(0, 170, 255, 0.3);
-    box-shadow:
-            0 0 20px #00ddff,
-            0 0 30px #00ccff inset;
+    box-shadow: 0 0 20px #00ddff,
+    0 0 30px #00ccff inset;
     transform: scale(1.05);
 }
+
 .intro-text {
     margin-top: 25px;
     width: 90vw;
@@ -139,36 +138,62 @@ body, html {
     line-height: 1.6;
     color: #ccefff;
     text-align: center;
-    text-shadow:
-            0 0 5px #00eaff,
-            0 0 10px #00caff;
+    text-shadow: 0 0 5px #00eaff,
+    0 0 10px #00caff;
     animation: fadeInSlow 2.5s ease-in;
     z-index: 3;
 }
+
 .fade-out {
     animation: fadeOut 0.8s ease-in-out forwards;
 }
 
 @keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
+
 @keyframes letterJump {
-    0% { transform: translateY(20px); opacity: 0; }
-    50% { transform: translateY(-15px); opacity: 1; }
-    100% { transform: translateY(0); opacity: 1; }
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @keyframes blueGlow {
@@ -185,7 +210,14 @@ body, html {
         text-shadow: 0 0 15px #33f0ff, 0 0 25px #33f0ff, 0 0 35px #00ccff;
     }
 }
+
 @keyframes fadeInSlow {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

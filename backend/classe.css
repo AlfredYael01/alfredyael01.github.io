@@ -10,23 +10,19 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1300px;
-    margin: 40px auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.92); /* Opacité pour voir le fond derrière */
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
-    border-radius: 10px;
+header {
+    text-align: center;
+    padding-top: 40px;
+    color: white;
 }
 
 h1, h2 {
-    text-align: center;
     font-family: 'UnifrakturMaguntia', cursive;
-    color: #1B856F;
+    color: white;
     margin-bottom: 15px;
 }
 
-.grille-details {
+.layout-container {
     display: grid;
     grid-template-areas:
         "west center east"
@@ -34,62 +30,69 @@ h1, h2 {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto auto;
     gap: 30px;
-    margin-top: 40px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.93);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.colonne {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    position: relative;
-    border: 2px solid #d0d0d0;
-}
-
-/* Zone de style façon BorderLayout */
-.col-west {
+/* Attribution des zones */
+.west {
     grid-area: west;
     border-right: 4px solid #b0b0b0;
 }
 
-.col-center {
+.center {
     grid-area: center;
     border-left: 4px solid #b0b0b0;
     border-right: 4px solid #b0b0b0;
 }
 
-.col-east {
+.east {
     grid-area: east;
     border-left: 4px solid #b0b0b0;
 }
 
-.col-south {
+.south {
     grid-area: south;
     border-top: 4px solid #b0b0b0;
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
-.colonne img {
+section {
+    padding: 15px;
+    background: rgba(250, 250, 250, 0.95);
+    border-radius: 8px;
+}
+
+section img {
     width: 100%;
     max-height: 200px;
     object-fit: contain;
     margin-bottom: 10px;
-    border-radius: 4px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
 
-.colonne p,
-.colonne h2,
-.colonne a {
+section h2,
+
+section a {
     margin: 10px 0;
     text-align: center;
-    word-break: break-word;
+    color: #1e3242;
 }
-
-.colonne a {
-    color: #017a87;
+section p{
+    margin: 10px 0;
+    text-align: justify;
+    color: #333;
+}
+section a {
+    color: black;
     text-decoration: none;
 }
 
-.colonne a:hover {
+section a:hover {
     text-decoration: underline;
 }
