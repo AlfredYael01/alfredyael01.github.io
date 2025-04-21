@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Combo'Kfu - Accueil</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">  <link rel="stylesheet" href="backend/accueil.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="backend/accueil.css">
 </head>
@@ -21,10 +22,9 @@
 </header>
 
 <main>
-
   <section class="menu">
-    <!-- Remplace les <button> par des <a> pour activer les redirections -->
-    <div class="grid-classes">
+    <button id="menu-toggle" class="menu-toggle">☰</button>
+    <div class="grid-classes" id="menu">
       <a href="classe.html?nom=cra" class="classe cra">Cra</a>
       <a href="classe.html?nom=eca" class="classe eca">Eca</a>
       <a href="classe.html?nom=elio" class="classe elio">Elio</a>
@@ -44,7 +44,6 @@
       <a href="classe.html?nom=xelor" class="classe xelor">Xelor</a>
       <a href="classe.html?nom=zobal" class="classe zobal">Zobal</a>
     </div>
-
   </section>
 
   <section class="table-container">
@@ -89,5 +88,6 @@
 <footer>
   <p>© 2025 Combo'Kfu est un site d'aide qui repertorie les combos et les stuffs de chaque classe du jeu Wakfu. Il n'est pas affilié à Ankama.</p>
 </footer>
+    <script src="backend/index.js"></script>
 </body>
 </html>
