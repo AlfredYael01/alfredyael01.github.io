@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         links.forEach(link => {
             const className = link.classList[1];
             if (!link.style.backgroundImage || link.style.backgroundImage === "none") {
-                link.style.backgroundImage = `url('image/${capitalize(className)}.png')`;
+                link.style.backgroundImage = `url('../image/${capitalize(className)}.png')`;
                 link.style.backgroundSize = "100%";
                 link.style.backgroundPosition = "center";
                 link.style.backgroundRepeat = "no-repeat";
